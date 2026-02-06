@@ -1,11 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>For Mr. Shaikhu 💗</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #fff1f5;
+            font-family: 'Segoe UI', cursive;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /* allow vertical scroll */
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 30px;
+            text-align: center;
+            width: 70%;
+            max-width: 800px;
+
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Teddy couple */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .teddy-couple {
+            animation: pulse 2s infinite;
+        }
+
+        .teddy-couple {
+            width: 240px;
+            margin-bottom: 20px;
+            animation: floatTeddy 4s ease-in-out infinite;
+        }
+
+        @keyframes floatTeddy {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #b30047;
+            font-size: 30px;
+        }
+
+        .subtitle {
+            color: #ff4d88;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons */
+        .btn-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            position: relative;
+            height: 60px;
+        }
+
+        button {
+            border: none;
+            border-radius: 30px;
+            padding: 12px 28px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .btn-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 25px;
+            position: relative;
+            height: 60px;
+            /* FIXED HEIGHT prevents shift */
+        }
+
+        #yes {
+            background: #ff5fa2;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        #no {
+            background: #9aa0a6;
+            color: white;
+            position: relative;
+        }
+
+
+
+        .sparkle {
+            font-size: 24px;
+            animation: floatTeddy 3s infinite;
+        }
+
+
+
+        /* Hearts */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            color: #ff7aa2;
+            animation: float 7s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-110vh);
+            }
+        }
+
+        /* Page 2 */
+        #page2 {
+            display: none;
+        }
+
+        .message-box {
+            background: #ffe6f0;
+            padding: 35px;
+            border-radius: 25px;
+            border: 3px solid #ff99cc;
+            color: #b30047;
+            text-align: left;
+            font-size: 17px;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        /* Corner hearts */
+        .message-box::before {
+            content: "💗";
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            font-size: 28px;
+        }
+
+        .message-box::after {
+            content: "💗";
+            position: absolute;
+            bottom: -12px;
+            right: -12px;
+            font-size: 28px;
+        }
+
+        .particle {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff4da6;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99999;
+            animation: burst 1s ease-out forwards;
+        }
+
+        @keyframes burst {
+            to {
+                transform: translate(var(--x), var(--y));
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <script type="module" src="script.js"></script>
+
+    <!-- 🎵 MUSIC -->
+    <audio id="music" loop>
+        <source
+            src="Tanishka_Bahl_-_Finding_Her_Female_Version_lyrics_lyricssong_findingher_tanishkabahl_kushagra_256KBPS.webm"
+            type="audio/webm">
+    </audio>
+
+    <div class="container">
+
+        <!-- PAGE 1 -->
+        <div class="card" id="page1">
+            <img src="122.jpg" class="teddy-couple" alt="Teddy Couple">
+            <div class="sparkle">✨ ✨ ✨</div>
+
+            <h1>I’m sorry Mr. Shaikhu 🥺</h1>
+            <div class="subtitle">Maaf kiya ya nahi?</div>
+            <p id="typingText"></p>
+
+
+            <div class="btn-wrapper">
+                <button id="yes" onclick="openPage2()">Haan 💖</button>
+                <button id="no" onmouseover="moveNo()">Nahi 😤</button>
+            </div>
+
+
+        </div>
+
+        <!-- PAGE 2 -->
+        <div class="card" id="page2">
+
+            <h1>My Dear Shaikhu 💗</h1>
+
+            <div class="message-box">
+                Hlew hlew , am i talking to budhau , hii start krti hun start se pehle toh aap mujhe bade ajib lge toh
+                aur maine baat krna v start isiliye kiya tha kyunki maine socha time pass kr lungi but dhere dhere aap
+                humko psnd ane lage kaafi jyada , aur aap time nikale mere liye itne dur se ate ho vo v mujhe bahoot
+                acha lgta hai fir maine socha ki bhai yeah toh koi v kr skta hai fir maine socha ki bhai 5 din itna kaam
+                krke v milne ata hai yeah v achi baat hai kher bahoot lambe time k baad hum milte hai but anyways , toh
+                isiliye mujhe thoda bura lgta hai agr main sbko dekhti hun tb aur fir thode tym baad mujhe aisa lgne lga
+                ki aap pehle jaise tym nhi derhe but obviously aapka work load v increase hogya hai but aap jo baar baar
+                yeah bolte ho ki kya baat kren aisa mt bola kro aab maine socha ki breakup hone vala hai toh fir end v
+                ache se kr dun special note bna kr bhej dun kher mujhe chhaiye tha koi mere liye banaye pr koi nah hum
+                expect nhi krenge aap se kuch v huhhhh , vaise bahoot pyaar se banya hai maine yeah for u ..., but i am
+                writing this letter to let you know how much u matter to me .
+                ok ji ......
+                💗I HATE U 💗
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const music = document.getElementById("music");
+        music.volume = 0.35;
+
+        // Move "Nahi" but keep it visible
+        function moveNo() {
+            const no = document.getElementById("no");
+            const card = document.querySelector("#page1");
+
+            // detach from flex layout
+            card.appendChild(no);
+
+            no.style.position = "absolute";
+            no.style.zIndex = "9999";
+
+            const maxX = card.clientWidth - no.offsetWidth - 20;
+            const maxY = card.clientHeight - no.offsetHeight - 20;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            no.style.left = randomX + "px";
+            no.style.top = randomY + "px";
+        }
+
+
+
+
+        const text = "You are my favorite person, don't stay angry 🥺💗";
+        let i = 0;
+
+        function typeEffect() {
+            if (i < text.length) {
+                document.getElementById("typingText").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, 60);
+            }
+        }
+
+        typeEffect();
+
+
+        // On Haan click
+        function openPage2() {
+            const music = document.getElementById("music");
+            music.play();
+
+            document.getElementById("page1").style.display = "none";
+            document.getElementById("page2").style.display = "block";
+
+            setTimeout(() => {
+                bigPinkBurst();
+            }, 200);
+        }
+
+        function bigPinkBurst() {
+
+            for (let j = 0; j < 8; j++) {   // number of burst points
+
+                const centerX = Math.random() * window.innerWidth;
+                const centerY = Math.random() * window.innerHeight;
+
+                for (let i = 0; i < 40; i++) {  // particles per burst
+
+                    const particle = document.createElement("div");
+                    particle.className = "particle";
+
+                    const angle = Math.random() * 2 * Math.PI;
+                    const distance = Math.random() * 200;
+
+                    const x = Math.cos(angle) * distance + "px";
+                    const y = Math.sin(angle) * distance + "px";
+
+                    particle.style.left = centerX + "px";
+                    particle.style.top = centerY + "px";
+
+                    particle.style.right = centerX + "px";
+                    particle.style.bottom = centerY + "px";
+
+                    particle.style.setProperty('--x', x);
+                    particle.style.setProperty('--y', y);
+
+                    document.body.appendChild(particle);
+
+                    setTimeout(() => particle.remove(), 1000);
+                }
+            }
+        }
+
+
+
+
+        // Hearts animation
+        setInterval(() => {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "💗";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (20 + Math.random() * 20) + "px";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 7000);
+        }, 120);
+    </script>
+
 </body>
+
 </html>
